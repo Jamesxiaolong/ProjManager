@@ -1,0 +1,124 @@
+﻿<Window x:Class="ProjMgr.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Helper="clr-namespace:ProjMgr.Helper"
+        WindowStyle="None"  BorderThickness="6" ResizeMode="NoResize"
+        AllowsTransparency="True" WindowStartupLocation="CenterScreen"
+        Title="登录" Height="500" Width="900" >
+
+    <Window.Resources>
+        <ResourceDictionary Source="Resource/Style/LoginStyle.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <!--窗口阴影效果-->
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="10" Color="#FFcccccc" Direction="0" ShadowDepth="0"/>
+    </Window.Effect>
+
+
+    <Border BorderBrush="Transparent" BorderThickness="0" CornerRadius="60">
+        <Grid>
+            <!--标题-->
+            <Grid x:Name="Header" MouseDown="Header_MouseDown" ShowGridLines="False">
+                <Grid.Background>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#277BCC" Offset="0.2"/>
+                            <GradientStop Color="#2F6AB3" Offset="0.4"/>
+                            <GradientStop Color="#2577C8" Offset="0.7"/>
+                            <GradientStop Color="#1A61A9" Offset="1"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Grid.Column="0" Source="Resource/imgs/app_icon.ico" HorizontalAlignment="Left"/>
+                <Label Content="{StaticResource Title}" HorizontalAlignment="Left" Margin="33,4,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Comic Sans MS"/>
+                <Canvas Grid.Column="2">
+                    <StackPanel Orientation="Horizontal" Canvas.Right="0" Canvas.Top="0">
+                        <Button x:Name="MinimizeBtn" Width="40" Height="32" Style="{DynamicResource BlueBGButtonStyle}" Click="Minimize_Click">
+                            <Button.Content>
+                                <Image Source="Resource/imgs/Titiles/minimum.png" Margin="7,7,7,-2" Width="10" Height="10" />
+                            </Button.Content>
+                        </Button>
+                        <Button x:Name="CloseBtn" Width="40" Height="32" Style="{DynamicResource CloseButtonStyle}" Click="Close_Click" >
+                            <Button.Content>
+                                <Image Source="Resource/imgs/Titiles/close.png" Margin="7,7,7,-2" Width="10" Height="10" />
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+                </Canvas>
+            </Grid>
+            <!--标题-->
+
+
+            <Ellipse Grid.Row="1"  Margin="0,-240,0,0" x:Name="ellipseWithImageBrush" Stroke="#FF000000" Width="80" Height="80" VerticalAlignment="Center"  HorizontalAlignment="Center"  >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Resource/imgs/HeadImg.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <!--控件部分-->
+            <Grid Name="gPanel" Grid.Row="1">
+                <TabControl x:Name="root1" HorizontalAlignment="Center" Height="240" VerticalAlignment="Center" Margin="0,140,0,0" Width="460" Style="{DynamicResource TabControlStyle1}" SelectionChanged="root1_SelectionChanged" >
+
+                    <TabItem x:Name="tb1" Header="登录" Width="228" Height="30" Style="{DynamicResource TabItemStyle1}">
+                        <Grid >
+                            <Grid.Background>
+                                <LinearGradientBrush>
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#2D6EB9" Offset="0.3"/>
+                                        <GradientStop Color="#2577C8" Offset="0.6"/>
+                                        <GradientStop Color="#2373C3" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBox x:Name="user" HorizontalAlignment="Center" Height="26" Width="220" TextWrapping="NoWrap"  VerticalAlignment="Top" Grid.Row="0" Style="{DynamicResource TextBoxWarktxtStyle}" Tag="账号" PreviewTextInput="user_PreviewTextInput" Margin="120,19,120,0"/>
+                            <PasswordBox Name="pass" Helper:PasswordBoxHelper.Attach="True" HorizontalAlignment="Center" Height="26" Width="220" Grid.Row="0"  VerticalAlignment="Bottom" Style="{DynamicResource PasswordBoxWarktxtStyle}" Tag="密码" Margin="120,0"/>
+                            <StackPanel Grid.Row="0" Height="80" Width="110" HorizontalAlignment="Left">
+                                <Image Source="Resource/imgs/login/passicon.png" VerticalAlignment="Top" HorizontalAlignment="Right" Width="16" Margin="0,24,0,0"/>
+                                <Image Source="Resource/imgs/login/usericon.png" VerticalAlignment="Top" HorizontalAlignment="Right" Width="16" Margin="0,15,0,0"/>
+                            </StackPanel>
+                            <Button Name="loginBtn" Grid.Row="1" Content="登   录" Height="30" Width="220" Style="{StaticResource BtnInfoStyle}" VerticalAlignment="Center"  Click="loginBtn_Click"/>
+
+                            <CheckBox Content="记住密码" HorizontalAlignment="Left" Margin="115,10,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White"/>
+                        </Grid>
+                    </TabItem>
+
+
+
+
+                    <TabItem x:Name="tb2" Header="注册" Width="228" Height="30" Style="{DynamicResource TabItemStyle1}" >
+                        <Grid >
+                            <Grid.Background>
+                                <LinearGradientBrush>
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#2D6EB9" Offset="0.3"/>
+                                        <GradientStop Color="#2577C8" Offset="0.6"/>
+                                        <GradientStop Color="#2373C3" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="120"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBox x:Name="regName" HorizontalAlignment="Center" Height="26" Width="220" TextWrapping="NoWrap"  VerticalAlignment="Top" Grid.Row="0" Style="{DynamicResource TextBoxWarktxtStyle}" Tag="用户名" Margin="120,8,120,0"/>
+                            <TextBox x:Name="regUser" HorizontalAlignment="Center" Height="26" Width="220" TextWrapping="NoWrap"  VerticalAlignment="Center" Grid.Row="0" Style="{DynamicResource TextBoxWarktxtStyle}" Tag="账号" PreviewTextInput="regUser_PreviewTextInput" Margin="120,53,120,41"/>
+                            <PasswordBox Name="regPass" Helper:PasswordBoxHelper.Attach="True" HorizontalAlignment="Center" Height="26" Width="220" Grid.Row="0"  VerticalAlignment="Bottom" Style="{DynamicResource PasswordBoxWarktxtStyle}" Tag="密码" Margin="120,0,120,84" Grid.RowSpan="2"/>
+                            <Button Name="registBtn" Grid.Row="1" Content="注   册" Height="30" Width="220" Style="{StaticResource BtnInfoStyle}" VerticalAlignment="Center" Click="registBtn_Click" />
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+            <!--end控件部分-->
+
+
+        </Grid>
+    </Border>
+</Window>
