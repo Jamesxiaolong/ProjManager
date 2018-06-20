@@ -7,7 +7,7 @@
         Title="登录" Height="500" Width="900" >
 
     <Window.Resources>
-        <ResourceDictionary Source="Resource/Style/LoginStyle.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Style/LoginStyle.xaml"></ResourceDictionary>
     </Window.Resources>
     <!--窗口阴影效果-->
     <Window.Effect>

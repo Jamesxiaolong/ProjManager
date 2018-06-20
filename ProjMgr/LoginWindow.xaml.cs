@@ -111,7 +111,7 @@ namespace ProjMgr
 
         private bool RegistAccount()
         {
-            if (string.IsNullOrEmpty(user.Text) || string.IsNullOrEmpty(pass.Password))
+            if (string.IsNullOrEmpty(regUser.Text) || string.IsNullOrEmpty(regPass.Password) || string.IsNullOrEmpty(regName.Text))
             {
                 return false;
             }

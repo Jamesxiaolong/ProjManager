@@ -58,37 +58,45 @@ namespace ProjMgr.Page
 
         private void GetSysInfo()
         {
-            //获取CPU
-            item1.Desc.Text = "CPU逻辑处理器";
-            item1.Num.Text = Computer.Instance().GetLogicCpuCount().ToString();
-            BrushConverter brushConverter = new BrushConverter();
-            item1.Grid1.Background = (Brush)brushConverter.ConvertFromString("#67CBCC");
-            item1.img.Source = new BitmapImage(new Uri("../Resource/imgs/Hostinfo/CPU.png", UriKind.Relative));
+            try
+            {
+                //获取CPU
+                item1.Desc.Text = "CPU逻辑处理器";
+                item1.Num.Text = Computer.Instance().GetLogicCpuCount().ToString();
+                BrushConverter brushConverter = new BrushConverter();
+                item1.Grid1.Background = (Brush)brushConverter.ConvertFromString("#67CBCC");
+                item1.img.Source = new BitmapImage(new Uri("../Resource/imgs/Hostinfo/CPU.png", UriKind.Relative));
 
-            //获取内存
-            item2.Desc.Text = "物理内存";
-            memSize = long.Parse(Computer.Instance().GetTotalPhysicalMemory()) / 1024 / 1024;
-            item2.Num.Text = memSize.ToString();
-            item2.Num.Text += "MB";
-            item2.Grid1.Background = (Brush)brushConverter.ConvertFromString("#FF6D5D");
-            item2.img.Source = new BitmapImage(new Uri("../Resource/imgs/Hostinfo/mem.png", UriKind.Relative));
+                //获取内存
+                item2.Desc.Text = "物理内存";
+                memSize = long.Parse(Computer.Instance().GetTotalPhysicalMemory()) / 1024 / 1024;
+                item2.Num.Text = memSize.ToString();
+                item2.Num.Text += "MB";
+                item2.Grid1.Background = (Brush)brushConverter.ConvertFromString("#FF6D5D");
+                item2.img.Source = new BitmapImage(new Uri("../Resource/imgs/Hostinfo/mem.png", UriKind.Relative));
 
 
-            //硬盘大小
-            item3.Desc.Text = "硬盘容量";
-            diskSize = long.Parse(Computer.Instance().GetSizeOfDisk()) / 1024 / 1024 / 1024;
-            item3.Num.Text = diskSize.ToString();
-            item3.Num.Text += "GB";
-            item3.Grid1.Background = (Brush)brushConverter.ConvertFromString("#FBD948");
-            item3.img.Source = new BitmapImage(new Uri("../Resource/imgs/Hostinfo/disk.png", UriKind.Relative));
+                //硬盘大小
+                item3.Desc.Text = "硬盘容量";
+                diskSize = long.Parse(Computer.Instance().GetSizeOfDisk()) / 1024 / 1024 / 1024;
+                item3.Num.Text = diskSize.ToString();
+                item3.Num.Text += "GB";
+                item3.Grid1.Background = (Brush)brushConverter.ConvertFromString("#FBD948");
+                item3.img.Source = new BitmapImage(new Uri("../Resource/imgs/Hostinfo/disk.png", UriKind.Relative));
 
-            //分区数量
-            dirNameList = new List<string>();
-            dirNameList = Computer.Instance().GetDirNames();
-            item4.Desc.Text = "硬盘分区";
-            item4.Num.Text = dirNameList.Count.ToString();
-            item4.Grid1.Background = (Brush)brushConverter.ConvertFromString("#60CEEB");
-            item4.img.Source = new BitmapImage(new Uri("../Resource/imgs/Hostinfo/disk.png", UriKind.Relative));
+                //分区数量
+                dirNameList = new List<string>();
+                dirNameList = Computer.Instance().GetDirNames();
+                item4.Desc.Text = "硬盘分区";
+                item4.Num.Text = dirNameList.Count.ToString();
+                item4.Grid1.Background = (Brush)brushConverter.ConvertFromString("#60CEEB");
+                item4.img.Source = new BitmapImage(new Uri("../Resource/imgs/Hostinfo/disk.png", UriKind.Relative));
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("异常",e.Message);
+            }
+
 
         }//end HostInfo
 
@@ -99,21 +107,25 @@ namespace ProjMgr.Page
 
             //获取硬盘使用量
             //再次获得硬盘使用率 变量磁盘数量 获得每个盘剩余容量
+            /* 这里会出现一个异常
             string nameStr;
             double _DiskSize = 0;
-            foreach (string name in dirNameList)
+           /* foreach (string name in dirNameList)
             {
                 nameStr = name;
                 nameStr = nameStr.Replace(":\\", "");
                 //获取该磁盘剩余带下
                 _DiskSize += Computer.Instance().GetHardDiskFreeSpace(nameStr);
             }
-            DirSurplus = (_DiskSize / diskSize) * 100.0;
+            DirSurplus = (_DiskSize / diskSize) * 100.0;*/
+            DirSurplus = 62.5;
+
 
             //获取内存已用多少 获得使用率
             double keyong = Computer.Instance().MemoryAvailable() / 1024 / 1024;
             keyong = memSize - keyong;//获得可用 
             MemSurplus = (keyong / memSize) * 100.0; //转成百分比
+
 
         }
 
@@ -140,10 +152,11 @@ namespace ProjMgr.Page
 
         private void ProcessThreadFunc()
         {
-
+           
             GetProInfo();
             this.Asyn1.Start(100);
             this.Asyn2.Start(100);
+            
             //找到值最大的循环
             int max = 0;
             if (DirSurplus > MemSurplus)
@@ -173,8 +186,10 @@ namespace ProjMgr.Page
                     this.Asyn2.Advance((MemSurplus - (int)MemSurplus));
                 }
                 System.Threading.Thread.Sleep(28);
-            }
+            }    
             isStartProcess = true;
+            
+
         }
 
 

@@ -85,10 +85,7 @@
                 </Grid>
             </Border>
         </Grid>
-        <Button Content="性能优先下载谷歌到C盘" Grid.Column="1" HorizontalAlignment="Left" Margin="30,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="136" Click="Button_Click_2"/>
-        <Button Content="速度优先下载谷歌到C盘" Grid.Column="1" HorizontalAlignment="Left" Margin="298,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="136" Click="Button_Click_2"/>
         <!--end Process-->
-
 
     </Grid>
 </UserControl>

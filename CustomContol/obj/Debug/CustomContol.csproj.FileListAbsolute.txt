@@ -40,4 +40,3 @@ D:\project\项目管理系统\ProjMgr\CustomContol\bin\Debug\System.Windows.Inte
 D:\project\项目管理系统\ProjMgr\CustomContol\obj\Debug\CustomContol.g.resources
 D:\project\项目管理系统\ProjMgr\CustomContol\obj\Debug\CustomContol.Properties.Resources.resources
 D:\project\项目管理系统\ProjMgr\CustomContol\obj\Debug\CustomContol.csproj.GenerateResource.Cache
-D:\project\项目管理系统\ProjMgr\CustomContol\obj\Debug\CustomContol.csprojResolveAssemblyReference.cache

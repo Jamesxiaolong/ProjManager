@@ -99,7 +99,6 @@ D:\project\项目管理系统\ProjMgr\ProjMgr\obj\Debug\Page\HostInfo.baml
 D:\project\项目管理系统\ProjMgr\ProjMgr\obj\Debug\Style\LoginStyle.baml
 D:\project\项目管理系统\ProjMgr\ProjMgr\obj\Debug\ProjMgr_Content.g.cs
 D:\project\项目管理系统\ProjMgr\ProjMgr\bin\Debug\JumpKick.HttpLib.dll
-D:\project\项目管理系统\ProjMgr\ProjMgr\obj\Debug\ProjMgr.csprojResolveAssemblyReference.cache
 D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\bin\Debug\ProjMgr.exe.config
 D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\bin\Debug\ProjMgr.exe
 D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\bin\Debug\ProjMgr.pdb
@@ -138,3 +137,6 @@ D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\obj\D
 D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\obj\Debug\ProjMgr.csproj.GenerateResource.Cache
 D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\obj\Debug\ProjMgr.exe
 D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\obj\Debug\ProjMgr.pdb
+D:\project\项目管理系统\ProjMgr\ProjMgr\bin\Debug\CustomContol.dll
+D:\project\项目管理系统\ProjMgr\ProjMgr\bin\Debug\CustomContol.pdb
+D:\project\项目管理系统\ProjMgr\ProjMgr\obj\Debug\ProjMgr.csprojResolveAssemblyReference.cache

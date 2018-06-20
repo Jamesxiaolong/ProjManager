@@ -13,7 +13,6 @@ D:\project\项目管理系统\ProjMgr\ProjMgr\bin\x64\Debug\System.Data.SQLite.d
 D:\project\项目管理系统\ProjMgr\ProjMgr\bin\x64\Debug\System.Utility.dll
 D:\project\项目管理系统\ProjMgr\ProjMgr\bin\x64\Debug\System.Windows.Interactivity.dll
 D:\project\项目管理系统\ProjMgr\ProjMgr\bin\x64\Debug\System.Data.SQLite.xml
-D:\project\项目管理系统\ProjMgr\ProjMgr\obj\x64\Debug\ProjMgr.csprojResolveAssemblyReference.cache
 D:\project\项目管理系统\ProjMgr\ProjMgr\obj\x64\Debug\Controls\HostInfoItem.baml
 D:\project\项目管理系统\ProjMgr\ProjMgr\obj\x64\Debug\Style\Colors.baml
 D:\project\项目管理系统\ProjMgr\ProjMgr\obj\x64\Debug\Style\MainResourceDictionary.baml
@@ -78,3 +77,5 @@ D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\obj\x
 D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\obj\x64\Debug\ProjMgr.g.resources
 D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\obj\x64\Debug\ProjMgr.Properties.Resources.resources
 D:\project\项目管理系统备份\项目管理系统6-15\ProjMgr\ProjMgr\obj\x64\Debug\ProjMgr.csproj.GenerateResource.Cache
+D:\project\项目管理系统\ProjMgr\ProjMgr\bin\x64\Debug\CustomContol.pdb
+D:\project\项目管理系统\ProjMgr\ProjMgr\obj\x64\Debug\ProjMgr.csprojResolveAssemblyReference.cache
