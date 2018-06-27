@@ -344,20 +344,23 @@
     <!--Button MenuItem-->
     <Style x:Key="BtnItemStyle" TargetType="Button">
         <Setter Property="Foreground" Value="#151515"/>
-        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Background" Value="#EFEFEF"/>
+        <Setter Property="BorderBrush" Value="#FFEFEFEF"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="0">
+                    <Border x:Name="border" Width="120" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="1">
                         <!--在按钮叛变显示图标 用TextBlock 如何赋值?-->
-                        <TextBlock Padding="7,2,8,3" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock  Name="btnMenuItemContent" Padding="1,2,8,3" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="#AEDDF1"/>
                             <Setter TargetName="border" Property="Background" Value="#DBEBF2"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="BorderBrush" Value="#AEDDF1"/>
                             <Setter TargetName="border" Property="Background" Value="#DBEBF2"/>
                         </Trigger>
 
@@ -370,6 +373,9 @@
         </Setter>
     </Style>
 
-
+    
+    
+    
+    
 
 </ResourceDictionary>

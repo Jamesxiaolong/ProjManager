@@ -35,10 +35,10 @@
                 <ColumnDefinition Width="8"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <controls:HostInfoItem x:Name="item1" Grid.Column="0"/>
-            <controls:HostInfoItem x:Name="item2" Grid.Column="2"/>
-            <controls:HostInfoItem x:Name="item3" Grid.Column="4"/>
-            <controls:HostInfoItem x:Name="item4" Grid.Column="6"/>
+            <controls:HostInfoItem x:Name="item1" Grid.Column="0" Desc="CPU数量"  BackBrush="#67CBCC" Img="../Resource/imgs/Hostinfo/CPU.png"/>
+            <controls:HostInfoItem x:Name="item2" Grid.Column="2" Desc="物理内存" BackBrush="#FF6D5D" Img="../Resource/imgs/Hostinfo/mem.png"/>
+            <controls:HostInfoItem x:Name="item3" Grid.Column="4" Desc="硬盘容量" BackBrush="#FBD948" Img="../Resource/imgs/Hostinfo/disk.png"/>
+            <controls:HostInfoItem x:Name="item4" Grid.Column="6" Desc="磁盘分区" BackBrush="#60CEEB" Img="../Resource/imgs/Hostinfo/disk.png"/>
         </Grid>
 
         <!--4个圆形进度条显示信息-->
@@ -57,7 +57,7 @@
                 <Grid Margin="0,5,0,0">
                     <ProgressBar Style="{StaticResource LoopProcessBar}"  Value="{Binding Percent,Mode=OneWay}" VerticalAlignment="Top" x:Name="pro1" Margin="0" Width="200" Height="200" BorderThickness="12" BorderBrush="#2B9ED5"/>
                     <TextBlock FontSize="30" Foreground="#2B9ED5" Margin="0,80,0,0" Text="{Binding Value,Mode=OneWay,ElementName=pro1,StringFormat={}{0:p1}}" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                    <TextBlock FontSize="20" Foreground="#AFAFAF" Name="ProDesc1" Text="0"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Foreground="#AFAFAF" Name="ProDesc1" Text="硬盘使用率"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                 </Grid>
             </Border>
 
@@ -65,7 +65,7 @@
                 <Grid Margin="0,5,0,0">
                     <ProgressBar Style="{StaticResource LoopProcessBar}" Value="{Binding Percent,Mode=OneWay}" VerticalAlignment="Top" x:Name="pro2" Margin="0" Width="200" Height="200" BorderThickness="12" BorderBrush="#00FF00"/>
                     <TextBlock FontSize="30" Foreground="#00FF00"  Margin="0,80,0,0" Text="{Binding Value,Mode=OneWay,ElementName=pro2,StringFormat={}{0:p1}}" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                    <TextBlock FontSize="20" Foreground="#AFAFAF" Name="ProDesc2" Text="0"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Foreground="#AFAFAF" Name="ProDesc2" Text="内存使用率"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                 </Grid>
             </Border>
 
@@ -73,7 +73,7 @@
                 <Grid Margin="0,5,0,0">
                     <ProgressBar Style="{StaticResource LoopProcessBar}" Value="{Binding Percent,Mode=OneWay}" VerticalAlignment="Top" x:Name="pro3" Margin="0" Width="200" Height="200" BorderThickness="12" BorderBrush="#EF436F"/>
                     <TextBlock FontSize="30" Margin="0,80,0,0" Text="{Binding Value,Mode=OneWay,ElementName=pro3,StringFormat={}{0:p1}}" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                    <TextBlock FontSize="20" Foreground="#AFAFAF" Name="ProDesc3" Text="0"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Foreground="#AFAFAF" Name="ProDesc3" Text="下载进度"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                 </Grid>
             </Border>
 
@@ -81,10 +81,10 @@
                 <Grid Margin="0,5,0,0">
                     <ProgressBar Style="{StaticResource LoopProcessBar}" Value="{Binding Percent,Mode=OneWay}" VerticalAlignment="Top" x:Name="pro4" Margin="0" Width="200" Height="200" BorderThickness="12" BorderBrush="#EF436F"/>
                     <TextBlock FontSize="30" Margin="0,80,0,0" Text="{Binding Value,Mode=OneWay,ElementName=pro4,StringFormat={}{0:p1}}" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                    <TextBlock FontSize="20" Foreground="#AFAFAF" Name="ProDesc4" Text="0"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="20" Foreground="#AFAFAF" Name="ProDesc4" Text="下载进度"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                 </Grid>
             </Border>
-        </Grid>
+        </Grid>    
         <!--end Process-->
 
     </Grid>

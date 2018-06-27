@@ -11,7 +11,6 @@
     </Style>
     <sys:String x:Key="Title">MSI项目管理系统登录程序</sys:String>
 
-    
  
     <!--登录-->
     <Style x:Key="BtnInfoStyle" TargetType="Button">
@@ -255,7 +254,6 @@
 
     <!--带水印的TextBox 257CCC-->
     <SolidColorBrush x:Key="TextBox.Static.Background" Color="#257CCC"/>
-    
     
     <LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
         <GradientStop Color="#ABADB3" Offset="0.05"/>

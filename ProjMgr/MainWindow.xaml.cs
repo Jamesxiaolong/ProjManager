@@ -1,6 +1,7 @@
 ﻿using ProjMgr.Helper;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -34,6 +35,7 @@ namespace ProjMgr
             {
                 board.Begin();
             }
+    
 
         }
 
@@ -105,6 +107,15 @@ namespace ProjMgr
                 HostInfoPage.StartProcess();
             }
         }
+
+        private void OpenAbout(object sender, RoutedEventArgs e)
+        {
+            PrintDialog dlg = new PrintDialog();
+            dlg.ShowDialog();
+
+        }
+
+  
 
     }//end MainWindow Class
 

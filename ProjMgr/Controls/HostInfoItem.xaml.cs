@@ -20,9 +20,51 @@ namespace ProjMgr.Controls
     /// </summary>
     public partial class HostInfoItem : UserControl
     {
+        
         public HostInfoItem()
         {
             InitializeComponent();
         }
+
+
+        //依赖属性 外界直接改变这个属性即可改变里面的值
+        public string Desc
+        {
+            get { return (string)GetValue(DescProperty); }
+            set { SetValue(DescProperty, value); }
+        }
+        public static readonly DependencyProperty DescProperty = DependencyProperty
+            .Register("Desc",typeof(string),typeof(HostInfoItem));
+
+        public string Num
+        {
+            get { return (string)GetValue(NumProperty); }
+            set { SetValue(NumProperty, value); }
+        }
+        public static readonly DependencyProperty NumProperty = DependencyProperty
+            .Register("Num", typeof(string), typeof(HostInfoItem));
+
+
+        public string BackBrush
+        {
+            get { return (string)GetValue(BackBrushProperty); }
+            set { SetValue(BackBrushProperty, value); }
+        }
+        public static readonly DependencyProperty BackBrushProperty = DependencyProperty
+            .Register("BackBrush", typeof(string), typeof(HostInfoItem));
+
+        public static readonly DependencyProperty ImgProperty = DependencyProperty.Register("Img",typeof(string),typeof(HostInfoItem));
+        public string Img
+        {
+            get { return (string)GetValue(ImgProperty); }
+            set { SetValue(ImgProperty,value); }
+        }
+
+        
     }
+
+  
+
+
+
 }

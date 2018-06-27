@@ -94,6 +94,7 @@ namespace ProjMgr.Helper.HttpMutilDownload
         public Queue<long> byteCopiedQueue;      //字节赋值长度队列
         System.Threading.Thread checkThread;     //队列维护线程
 
+
         private static readonly object syncObject = new object(); //同步对象
         public Semaphore threadSeam; //线程信号量
 
@@ -150,7 +151,7 @@ namespace ProjMgr.Helper.HttpMutilDownload
             for (int i = 0; i < ThreadNum; i++)
             {
                 //ThreadStatus[i] = false;  //线程结束标志false
-                FileNames[i] = "DownloadTemp/" + name + "_" + i.ToString() + ".data_progress";//通过索引起名字
+                FileNames[i] =  name + "_" + i.ToString() + ".data_progress";//通过索引起名字
                 //给线程最后一个分配剩余的文件部分
                 StartPos[i] = filethread * i;
                 if (i < ThreadNum - 1)
@@ -164,25 +165,30 @@ namespace ProjMgr.Helper.HttpMutilDownload
             }
         }//end Init
 
+
         public void StartDownload()
         {
-            System.Threading.Thread[] threads = new System.Threading.Thread[ThreadNum];//定义线程数组
+            //System.Threading.Thread[] threads = new System.Threading.Thread[ThreadNum];//定义线程数组
             DownloadRecvice[] downloadRecvice = new DownloadRecvice[ThreadNum]; //接收类
 
             //启动队列维护线程  这里也会创建多个线程
             checkThread = new System.Threading.Thread(new System.Threading.ThreadStart(CheckQueue));
             checkThread.Start();
-
+            CancellationTokenSource cts = new CancellationTokenSource();
+            TaskFactory tfDownload = new TaskFactory(); //使用任务工厂
             for (int i = 0; i < ThreadNum; i++) //启动线程
             {
                 downloadRecvice[i] = new DownloadRecvice(i,this,downloadProgress);
+                tfDownload.StartNew(downloadRecvice[i].OnReceive, cts);     
                 //使用线程池
-                System.Threading.ThreadPool.QueueUserWorkItem(downloadRecvice[i].OnReceive);
+                //System.Threading.ThreadPool.QueueUserWorkItem(downloadRecvice[i].OnReceive);
                 //threads[i] = new System.Threading.Thread(new System.Threading.ThreadStart(downloadRecvice[i].OnReceive));         
                 //threads[i].Start();
                 //threads[i].Priority = System.Threading.ThreadPriority.Highest;
-            }                 
-        }
+            }
+
+
+        }//end StartDownload
 
 
 
@@ -311,6 +317,7 @@ namespace ProjMgr.Helper.HttpMutilDownload
                 }
                 fs.Close();
                 ns.Close();
+           
             }
             catch (Exception er)
             {
@@ -321,7 +328,6 @@ namespace ProjMgr.Helper.HttpMutilDownload
             //线程停止调用合并文件
             dataObj.MergeFile();
         }//end OnReceive
-
 
 
     }//end DownloadRecvice
