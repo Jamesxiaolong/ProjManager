@@ -46,7 +46,7 @@
                 </Grid.ColumnDefinitions>
                 <!--标题-->
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
-                    <TextBlock Name="txt1" Text="&#xe602;"  Style="{StaticResource FIcon}"  FontSize="40"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBlock Name="txt1" Text="&#xe602;"  Style="{StaticResource TextBlockPIcon}"  FontSize="40"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <Label x:Name="WTitle" Content="MSI-PAPAGO" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" TextOptions.TextFormattingMode="Display" FontFamily="Nirmala UI" />
                 </StackPanel>
                 <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
@@ -76,16 +76,16 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="1">
-                                        <MenuItem Header="设置" Icon="&#xE633;" Style="{DynamicResource MenuItemStyle}" Click="OpenAbout"/>
-                                        <MenuItem Name="aa" Icon="&#xE639;" Header="插件管理" Style="{DynamicResource MenuItemStyle}"  />
-                                        <MenuItem Icon="&#xe655;"  Header="用户管理" Style="{DynamicResource MenuItemStyle}"/>
-                                        <MenuItem Icon="&#xe64a;" Header="修改密码" Style="{DynamicResource MenuItemStyle}"/>
-                                        <MenuItem Icon="&#xe641;" Header="在线更新" Style="{DynamicResource MenuItemStyle}"/>
+                                        <MenuItem Header="设置" Icon="&#xE633;" Style="{DynamicResource MenuItemPIcon}" Click="OpenAbout"/>
+                                        <MenuItem Name="aa" Icon="&#xE639;" Header="插件管理" Style="{DynamicResource MenuItemPIcon}"  />
+                                        <MenuItem Icon="&#xe655;"  Header="用户管理" Style="{DynamicResource MenuItemPIcon}"/>
+                                        <MenuItem Icon="&#xe64a;" Header="修改密码" Style="{DynamicResource MenuItemPIcon}"/>
+                                        <MenuItem Icon="&#xe641;" Header="在线更新" Style="{DynamicResource MenuItemPIcon}"/>
                                         <Separator  Style="{DynamicResource HorizontalSeparatorStyle}"/>
-                                        <MenuItem Icon="&#xe657;" Header="问题反馈" Style="{DynamicResource MenuItemStyle}"/>
-                                        <MenuItem Icon="&#xe61e;" Header="技术支持" Style="{DynamicResource MenuItemStyle}"/>
-                                        <MenuItem Icon="&#xe60e;" Header="帮助" Style="{DynamicResource MenuItemStyle}"/>
-                                        <MenuItem Icon="&#xe635;" Header="关于" Style="{DynamicResource MenuItemStyle}" Click="OpenAbout"/>
+                                        <MenuItem Icon="&#xe657;" Header="问题反馈" Style="{DynamicResource MenuItemPIcon}"/>
+                                        <MenuItem Icon="&#xe61e;" Header="技术支持" Style="{DynamicResource MenuItemPIcon}"/>
+                                        <MenuItem Icon="&#xe60e;" Header="帮助" Style="{DynamicResource MenuItemPIcon}"/>
+                                        <MenuItem Icon="&#xe635;" Header="关于" Style="{DynamicResource MenuItemPIcon}" Click="OpenAbout"/>
                                     </StackPanel>
                                 </Grid>
                             </Border>

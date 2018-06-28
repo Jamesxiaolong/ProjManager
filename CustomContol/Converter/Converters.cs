@@ -14,12 +14,14 @@ namespace CustomContol.Converter
     {
         public static ThicknessToDoubleConverter ThicknessToDoubleConverter
         {
-            get { return Singleton<ThicknessToDoubleConverter>.GetInstance(); }
+            //get { return Singleton<ThicknessToDoubleConverter>.GetInstance(); }
+            get { return ThicknessToDoubleConverter.GetInstance(); }
         }
 
         public static PercentToAngleConverter PercentToAngleConverter
         {
-            get { return Singleton<PercentToAngleConverter>.GetInstance(); }
+            //get { return Singleton<PercentToAngleConverter>.GetInstance(); }
+            get { return PercentToAngleConverter.GetInstance(); }
         }
     }
 }

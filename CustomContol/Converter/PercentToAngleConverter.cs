@@ -12,7 +12,7 @@ namespace CustomContol.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var percent = value.ToSafeString().ToDouble();
+            var percent = double.Parse(value.ToString());
             if (percent >= 1) return 360.0D;
             return percent * 360;
         }
@@ -21,6 +21,17 @@ namespace CustomContol.Converter
         {
             throw new NotImplementedException();
         }
+
+        private static PercentToAngleConverter _inst;
+        public static PercentToAngleConverter GetInstance()
+        {
+            if (_inst == null)
+            {
+                _inst = new PercentToAngleConverter();
+            }
+            return _inst;  
+        }
+
     }
 
 }

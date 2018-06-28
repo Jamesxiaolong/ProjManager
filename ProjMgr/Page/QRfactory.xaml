@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:CControl="clr-namespace:CustomContol.Controls;assembly=CustomContol"
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="1050">
     
@@ -52,10 +53,8 @@
                 <Image x:Name="logoImg" Height="180" Width="280"/>
             </Border>
         </Grid>
-        <Button Grid.Column="4"  Grid.Row="3" Content="添加Logo" x:Name="addLogoBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="100" Style="{DynamicResource QrGenerateBtnStyle}" Click="addLogoBtn_Click" />
-
-
-
+      
+        <CControl:PButton Grid.Column="4"  Grid.Row="3" Content="添加Logo" x:Name="addLogoBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="100" Click="addLogoBtn_Click" CornerRadius="4,4,4,4"/>
         <Grid Grid.Column="1" Grid.Row="4" Background="#FFFFFF">
             <Border BorderBrush="#DDE0E2" BorderThickness="1" CornerRadius="0">
                 <TextBox x:Name="DecodeContent" FontSize="18" AcceptsReturn="True" IsReadOnly="True" TextWrapping="WrapWithOverflow"  Style="{DynamicResource QRInputBoxStyle}" Tag="解码内容"/>

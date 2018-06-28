@@ -2,6 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
 
+        <ResourceDictionary Source="pack://application:,,,/CustomContol;component/Controls/PButton.xaml" />       
+        
         <ResourceDictionary Source="pack://application:,,,/CustomContol;component/Style/Themes/LoopProcessBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/CustomContol;component/Style/Themes/PIcon.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/CustomContol;component/Style/Themes/Separator.xaml" />
+        
+        
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

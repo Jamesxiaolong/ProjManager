@@ -111,9 +111,6 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Utility">
-      <HintPath>..\Packages\lib\System.Utility.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Interactivity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Packages\lib\System.Windows.Interactivity.dll</HintPath>
@@ -198,10 +195,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Style\QRFactoryStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Style\Separator.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

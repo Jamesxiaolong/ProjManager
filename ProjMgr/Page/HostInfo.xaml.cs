@@ -3,7 +3,7 @@ using ProjMgr.Helper;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Utility;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -150,8 +150,8 @@ namespace ProjMgr.Page
                      _Thread = new SingleThread(); 
                      _Thread.Start(ProcessThreadFunc);*/
                     isStartProcess = false; //动画在运行其他不能执行
-                    System.Utility.SingleThread thread = new SingleThread();
-                    thread.Start(ProcessThreadFunc);
+                    Task task = new Task(ProcessThreadFunc);
+                    task.Start();
 
                 }
             }

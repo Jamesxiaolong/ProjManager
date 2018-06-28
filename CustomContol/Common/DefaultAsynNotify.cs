@@ -297,8 +297,8 @@ namespace System
         private void StopTimer()
         {
             if (!this.TimerEnable) return;
-            this.TimeMessage = string.Format("共计耗时{0}",
-                                             System.Utility.Helper.Format.FormatSecond((int)this.UsedSecond));
+            /*his.TimeMessage = string.Format("共计耗时{0}",
+                                             System.Utility.Helper.Format.FormatSecond((int)this.UsedSecond));*/
 
             if (this.Timer != null)
             {
@@ -325,7 +325,7 @@ namespace System
                 return;
             }
 
-            string sf = "已用时 : {0}, 预计剩余时间 : {1}";
+            //string sf = "已用时 : {0}, 预计剩余时间 : {1}";
             var ct = this.UsedSecond;
             double rt;
             if (ct <= 0 || this.Completed <= 0)
@@ -339,7 +339,7 @@ namespace System
             }
 
             //超长耗时操作，剩余时间会吓住客户，so，超过20个小时的操作，都显示为“未知”。
-            string reStr;
+            /*string reStr;
             if (rt > 72000 || rt < 0)
             {
                 reStr = "未知";
@@ -349,7 +349,8 @@ namespace System
                 reStr = System.Utility.Helper.Format.FormatSecond((int)rt);
             }
 
-            this.TimeMessage = string.Format(sf, System.Utility.Helper.Format.FormatSecond(ct), reStr);
+            this.TimeMessage = string.Format(sf, System.Utility.Helper.Format.FormatSecond(ct), reStr);*/
+            this.TimeMessage = "未知";
         }
 
         /// <summary>

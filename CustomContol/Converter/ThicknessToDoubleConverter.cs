@@ -24,5 +24,15 @@ namespace CustomContol.Converter
         {
             return DependencyProperty.UnsetValue;
         }
+
+        private static ThicknessToDoubleConverter _inst;
+        public static ThicknessToDoubleConverter GetInstance()
+        {
+            if (_inst == null)
+            {
+                _inst = new ThicknessToDoubleConverter();
+            }
+            return _inst;
+        }
     }
 }
