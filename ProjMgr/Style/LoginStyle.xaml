@@ -9,39 +9,7 @@
         <Setter Property="FontFamily" Value="Comic Sans MS"/>
         <Setter Property="FontSize" Value="16"/>
     </Style>
-    <sys:String x:Key="Title">MSI项目管理系统登录程序</sys:String>
-
  
-    <!--登录-->
-    <Style x:Key="BtnInfoStyle" TargetType="Button">
-        <Setter Property="Width" Value="70"/>
-        <Setter Property="Height" Value="25"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="#FF5400"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="6">
-                        <TextBlock Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#EC6513"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#EF4210"/>
-                        </Trigger>
-
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="#CDCECE"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
 
     <!--输入框 左边可放图标-->
     <Style x:Key="InputBoxStyle" TargetType="{x:Type TextBox}">

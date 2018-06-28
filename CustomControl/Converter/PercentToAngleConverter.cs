@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace CustomContol.Converter
+namespace CustomControl.Converter
 {
     public class PercentToAngleConverter : IValueConverter
     {
@@ -29,7 +29,7 @@ namespace CustomContol.Converter
             {
                 _inst = new PercentToAngleConverter();
             }
-            return _inst;  
+            return _inst;
         }
 
     }

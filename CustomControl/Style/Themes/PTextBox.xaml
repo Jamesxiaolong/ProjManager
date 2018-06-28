@@ -1,10 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-
-    <!--登录TabBorderBrush-->
-    <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#333333"/>
-
-
-
+    
+    
+    <!--TextBox默认样式扩展-->
+    
+    
 </ResourceDictionary>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomContol.Converter
+namespace CustomControl.Converter
 {
     /// <summary>
     /// 常用转换器的静态引用

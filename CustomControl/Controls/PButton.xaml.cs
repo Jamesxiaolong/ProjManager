@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CustomContol.Controls
+namespace CustomControl.Controls
 {
     /// <summary>
     /// PButton.xaml 的交互逻辑
@@ -76,7 +76,7 @@ namespace CustomContol.Controls
             get { return (string)GetValue(PIconProperty); }
             set { SetValue(PIconProperty, value); }
         }
-
+         
         public static readonly DependencyProperty PIconSizeProperty =
             DependencyProperty.Register("PIconSize", typeof(int), typeof(PButton), new PropertyMetadata(20));
         /// <summary>
@@ -99,6 +99,30 @@ namespace CustomContol.Controls
             set { SetValue(PIconMarginProperty, value); }
         }
 
+        public static readonly DependencyProperty PIconVisibilityProperty = DependencyProperty.Register(
+           "PIconVisibility", typeof(bool), typeof(PButton), new PropertyMetadata(false));
+        /// <summary>
+        /// 字体图标显示模式
+        /// </summary>
+        public bool PIconVisibility
+        {
+            get { return (bool)GetValue(PIconVisibilityProperty); }
+            set { SetValue(PIconVisibilityProperty, value); }
+        }
+
+
+        public static readonly DependencyProperty PIconColorProperty =
+            DependencyProperty.Register("PIconColor", typeof(Brush), typeof(PButton), new PropertyMetadata(Brushes.Black));
+        /// <summary>
+        /// 按钮字体图标颜色
+        /// </summary>
+        public Brush PIconColor
+        {
+            get { return (Brush)GetValue(PIconColorProperty); }
+            set { SetValue(PIconColorProperty, value); }
+        }
+
+
         public static readonly DependencyProperty AllowsAnimationProperty = DependencyProperty.Register(
             "AllowsAnimation", typeof(bool), typeof(PButton), new PropertyMetadata(true));
         /// <summary>
@@ -109,6 +133,7 @@ namespace CustomContol.Controls
             get { return (bool)GetValue(AllowsAnimationProperty); }
             set { SetValue(AllowsAnimationProperty, value); }
         }
+
 
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(PButton), new PropertyMetadata(new CornerRadius(2)));

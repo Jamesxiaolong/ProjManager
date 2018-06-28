@@ -45,13 +45,13 @@ namespace ProjMgr.Controls
             .Register("Num", typeof(string), typeof(HostInfoItem));
 
 
-        public string BackBrush
+        public Brush BackBrush
         {
-            get { return (string)GetValue(BackBrushProperty); }
+            get { return (Brush)GetValue(BackBrushProperty); }
             set { SetValue(BackBrushProperty, value); }
         }
         public static readonly DependencyProperty BackBrushProperty = DependencyProperty
-            .Register("BackBrush", typeof(string), typeof(HostInfoItem));
+            .Register("BackBrush", typeof(Brush), typeof(HostInfoItem),new PropertyMetadata(Brushes.AliceBlue));
 
         public static readonly DependencyProperty ImgProperty = DependencyProperty.Register("Img",typeof(string),typeof(HostInfoItem));
         public string Img

@@ -7,9 +7,8 @@
         <!-- 应该在此定义应用程序级的资源。-->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/CustomContol;component/Style/Style.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/CustomControl;component/Style/Style.xaml" />
                 <ResourceDictionary Source="Style/MainResourceDictionary.xaml"/>
-                <ResourceDictionary Source="Style/Colors.xaml" />
             </ResourceDictionary.MergedDictionaries>
            
         </ResourceDictionary>
