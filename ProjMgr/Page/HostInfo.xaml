@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="1050">
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/CustomContol;component/Style/Style.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/CustomControl;component/Style/Style.xaml" />
     </UserControl.Resources>
 
     <Grid Background="Transparent">

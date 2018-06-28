@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using CustomContol.Common;
+using CustomControl.Common;
 
 namespace System
 {

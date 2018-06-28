@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace CustomContol.Converter
+namespace CustomControl.Converter
 {
     /// <summary>
     /// 获取Thickness固定值double

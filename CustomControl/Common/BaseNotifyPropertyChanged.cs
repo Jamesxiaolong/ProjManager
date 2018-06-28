@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomContol.Common
+namespace CustomControl.Common
 {
     /// <summary>
     /// 实现了属性更改通知的基类

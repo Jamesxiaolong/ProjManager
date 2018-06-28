@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:CustomContol.Controls">
-    
+                    xmlns:local="clr-namespace:CustomControl.Controls">
+
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CustomContol;component/Style/Themes/PIcon.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/CustomControl;component/Style/Themes/PIcon.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--默认Button-->
@@ -35,7 +35,7 @@
                            RenderTransformOrigin="0.5,0.5" Style="{StaticResource TextBlockPIcon}"
                            Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path= PIcon}"
                            FontSize="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path= PIconSize}" 
-                           Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path= Foreground}">
+                           Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path= PIconColor}">
                     <TextBlock.RenderTransform>
                         <RotateTransform x:Name="transIcon" Angle="0"/>
                     </TextBlock.RenderTransform>
@@ -57,15 +57,27 @@
             <!--鼠标进入背景、前景样式-->
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=MouseOverBackground}" TargetName="border" />
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=MouseOverForeground}" TargetName="icon"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=PIconColor}" TargetName="icon"/>
                 <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=MouseOverForeground}" TargetName="txt"/>
             </Trigger>
             <!--鼠标按下前景、背景-->
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=PressedBackground}" TargetName="border" />
-                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=PressedForeground}" TargetName="icon"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=PIconColor}" TargetName="icon"/>
                 <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=PressedForeground}" TargetName="txt"/>
             </Trigger>
+            <!--禁用-->
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="border" Property="Background" Value="#D5D6DB"/>
+            </Trigger>
+
+            <Trigger Property="PIconVisibility" Value="True">
+                <Setter Property="Visibility" Value="Visible" TargetName="icon" />
+            </Trigger>
+            <Trigger Property="PIconVisibility" Value="False">
+                <Setter Property="Visibility" Value="Collapsed" TargetName="icon" />
+            </Trigger>
+            
             <!--多添加 如果鼠标进入,并且开启动画则-触发动画-->
             <MultiTrigger>
                 <MultiTrigger.Conditions>
@@ -75,14 +87,14 @@
                 <MultiTrigger.EnterActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="transIcon" Storyboard.TargetProperty="Angle" To="180" Duration="0:0:0:2"/>
+                            <DoubleAnimation Storyboard.TargetName="transIcon" Storyboard.TargetProperty="Angle" To="180" Duration="0:0:0:1"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </MultiTrigger.EnterActions>
                 <MultiTrigger.ExitActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="transIcon" Storyboard.TargetProperty="Angle" To="0" Duration="0:0:0:2"/>
+                            <DoubleAnimation Storyboard.TargetName="transIcon" Storyboard.TargetProperty="Angle" To="0" Duration="0:0:0:1"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </MultiTrigger.ExitActions>
@@ -112,6 +124,54 @@
     </Style>
     <!--默认样式-->
     <Style TargetType="{x:Type local:PButton}" BasedOn="{StaticResource DefaultFButtonStyle}"/>
+
+
+    <SolidColorBrush x:Key="TextForeground" Color="Black"></SolidColorBrush>
+    <!--背景透明样式-->
+    <Style x:Key="PButton_Transparency" TargetType="{x:Type local:PButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="MouseOverBackground" Value="Transparent" />
+        <Setter Property="PressedBackground" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource TextForeground}" />
+        <Setter Property="MouseOverForeground" Value="{StaticResource MouseOverForeground}" />
+        <Setter Property="PressedForeground" Value="{StaticResource PressedForeground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="PIconSize" Value="20" />
+        <Setter Property="Template" Value="{StaticResource PButton_Template}" />
+        <Setter Property="Padding" Value="3,1,3,1" />
+        <Setter Property="Content" Value="{x:Null}" />
+        <Setter Property="PIconMargin" Value="0,0,2,0" />
+        <Setter Property="AllowsAnimation" Value="False" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
+
+    <!--LinkButton 打开链接样式按钮-->
+    <Style x:Key="PButton_LinkButton" TargetType="{x:Type local:PButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="MouseOverBackground" Value="Transparent" />
+        <Setter Property="PressedBackground" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource LinkForeground}" />
+        <Setter Property="MouseOverForeground" Value="{StaticResource MouseOverForeground}" />
+        <Setter Property="PressedForeground" Value="{StaticResource PressedForeground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="PIconSize" Value="20" />
+        <Setter Property="Template" Value="{StaticResource PButton_Template}" />
+        <Setter Property="Padding" Value="3,1,3,1" />
+        <Setter Property="Content" Value="{x:Null}" />
+        <Setter Property="PIconMargin" Value="0,0,2,0" />
+        <Setter Property="AllowsAnimation" Value="False" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
 
 
 </ResourceDictionary>
